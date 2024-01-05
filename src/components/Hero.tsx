@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { CustomButton } from '.'
 const Hero = () => {
-    const handleScroll = ()=>{
+    const handleScroll:any = ()=>{
 
     }
   return (
@@ -25,9 +25,9 @@ const Hero = () => {
               <Image src = "/hero.png" alt ="hero"
               fill className = "object-contain"
               />
+            </div>
               <div className="hero__image-overlay"></div>
             </div>
-        </div>
         </div>
   )
 }
