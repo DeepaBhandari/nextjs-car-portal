@@ -14,10 +14,10 @@ const SearchManufacturer = ({manufacturer, setManufacturer}:SearchManufacturerPr
             .includes(query.toLowerCase().replace(/\s+/g,"")
      ) })
   return (
-    <div className= "seatch-manufacturer">
-        <Combobox>
+    <div className= "search-manufacturer">
+        <Combobox value={manufacturer} onChange={setManufacturer}>
             <div className="relative w-full">
-                    <Combobox.Button className="absolute top-[14px]">
+                    <Combobox.Button className='absolute top-[14px]'>
                       <Image
                       src="/car-logo.svg"
                       width={20}
@@ -28,11 +28,9 @@ const SearchManufacturer = ({manufacturer, setManufacturer}:SearchManufacturerPr
                     </Combobox.Button>
                     <Combobox.Input
                     className="search-manufacturer__input"
+                    displayValue={(item: string) => item}
                     placeholder="Volkswagen"
-                    displayValue={(manufacturer:string)=>
-                    manufacturer
-                    }
-                    onChange={(e)=>setQuery(e.target.value)}
+                    onChange={(event) => setQuery(event.target.value)} 
                     />
                     <Transition 
                     as = {Fragment}
