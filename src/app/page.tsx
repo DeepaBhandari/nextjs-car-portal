@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import { SearchBar,CustomFilter, CarCard, ShowMore } from '@/components'
+import { fetchCars } from '@/utils';
 
 export default async function Home() {
   const allCars = await fetchCars({
@@ -18,7 +19,7 @@ export default async function Home() {
        <div className ="more__filters">
           <SearchBar/>
           <div className="more__filer container">
-            <CustomFilter title="fuel"/>
+            <CustomFilter title="fuel" options={[]}/>
             <CustomFilter title="year"/>
           </div>
        </div>
